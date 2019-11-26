@@ -12,7 +12,7 @@ defmodule Rumbl.TestHelpers do
         username: "user#{System.unique_integer([:positive])}",
         password: attrs[:password] || "supersecret"
       })
-      |> Accounts.register_user
+      |> Accounts.register_user()
 
     user
   end
@@ -25,8 +25,8 @@ defmodule Rumbl.TestHelpers do
         description: "a description"
       })
 
-      {:ok, video} = Multimedia.create_video(user, attrs)
+    {:ok, video} = Multimedia.create_video(user, attrs)
 
-      video
+    video
   end
 end
